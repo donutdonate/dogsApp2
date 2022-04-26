@@ -1,12 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import 'react-native-gesture-handler';
+import { createStackNavigator } from '@react-navigation/stack';
+import BreedDetail from './screens/BreedDetail'
+import BreedsList from './screens/BreedsList'
+import Favourites from './screens/Favourites'
+
+const Stack = createStackNavigator();
+function MyStack() {
+return(
+  <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Screen name="BreedsList" component={BreedsList}/>
+    <Stack.Screen name="BreedDetail" component={BreedDetail}/>
+  </Stack.Navigator>
+)
+}
+
+const Tab = createBottomTabNavigator();
+function MyTabs() {
+  return (
+  <Tab.Navigator screenOptions={{ headerShown: false }}>
+    <Tab.Screen name='Home' component={MyStack}/>
+    <Tab.Screen name='Favourites' component={Favourites}/>
+  </Tab.Navigator>
+  );
+}
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <MyTabs/>
+    </NavigationContainer>
   );
 }
 
