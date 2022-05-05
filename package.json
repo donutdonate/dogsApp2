@@ -23,10 +23,14 @@
     "react-native-gesture-handler": "~2.1.0",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
+    "react-native-shadow-2": "^6.0.4",
+    "react-native-svg": "12.1.1",
+    "react-native-vector-icons": "^9.1.0",
     "react-native-web": "0.17.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "prettier": "2.6.2"
   },
   "private": true
 }

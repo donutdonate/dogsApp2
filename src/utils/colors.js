@@ -1,0 +1,16 @@
+const colors = {
+  SCREEN_BACKGROUND: '#F5F5FA',
+  BREED_ITEM: '#F5F5FA',
+  BREED_NAME: '#333333',
+  BREED_TEMPERAMENT: '#4F4F4F',
+  BORDER: 'black',
+  ARROW_BACKGROUND: 'white',
+  BUTTON_BACKGROUND: 'white',
+  BUTTON_TITLE: '#5533EA',
+  TAB_ACTIBE: '#5533EA',
+  TAB_INACTIVE: '#4F4F4F',
+  SHADOW_START: '#AAAACC60',
+  SHADOW_END: '#AAAACC10',
+};
+
+export default colors;
