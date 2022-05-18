@@ -2,7 +2,12 @@ import React from 'react';
 import {TouchableOpacity, Text, StyleSheet} from 'react-native';
 import colors from '../../../utils/colors';
 
-export default function Button({title, pressFunction}) {
+interface IProps {
+  title: string;
+  pressFunction: () => void;
+}
+
+export default function Button({title, pressFunction}: IProps) {
   return (
     <TouchableOpacity
       style={styles.button}

@@ -14,7 +14,19 @@ import colors from '../../utils/colors';
 import {getRandImage} from '../../api/breeds';
 import {addToFavourite} from '../../api/favourites';
 
-export default function BreedDetail({route}) {
+interface IProps {
+  route: {
+    params: {
+      url: string;
+      name: string;
+      temperament: string;
+      id: number;
+      imageId: string;
+    };
+  };
+}
+
+export default function BreedDetail({route}: IProps) {
   const [url, setUrl] = useState(route.params.url);
   const [name, setName] = useState(route.params.name);
   const [temperament, setTemperament] = useState(route.params.temperament);

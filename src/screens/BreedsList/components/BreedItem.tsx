@@ -4,7 +4,19 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 import colors from '../../../utils/colors';
 
-export default function BreedItem({item}) {
+interface IProps {
+  item: {
+    name: string;
+    temperament: string;
+    id: number;
+    image: {
+      url: string;
+      id: string;
+    };
+  };
+}
+
+export default function BreedItem({item}: IProps) {
   const navigation = useNavigation();
   const url = item.image?.url;
   const name = item.name;

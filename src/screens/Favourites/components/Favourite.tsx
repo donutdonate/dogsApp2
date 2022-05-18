@@ -2,7 +2,19 @@ import React from 'react';
 import {View, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import {deleteFavourite} from '../../../api/favourites';
 
-export default function Favourite({item}) {
+interface IProps {
+  item: {
+    name: string;
+    temperament: string;
+    id: number;
+    image: {
+      url: string;
+      id: string;
+    };
+  };
+}
+
+export default function Favourite({item}: IProps) {
   const uri =
     'https://cdn4.iconfinder.com/data/icons/basic-interface-overcolor/512/trash_can-512.png';
 
@@ -10,7 +22,7 @@ export default function Favourite({item}) {
 
   const delFavourite = async () => {
     try {
-      const result = await deleteFavourite(favourite_id);
+      const result = await deleteFavourite(favourite_id.toString());
       console.log(result);
     } catch (error) {
       console.log(error);

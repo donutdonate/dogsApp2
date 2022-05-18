@@ -4,6 +4,18 @@ import BreedItem from './components/BreedItem';
 import colors from '../../utils/colors';
 import {getAllBreeds} from '../../api/breeds';
 
+interface IProps {
+  item: {
+    name: string;
+    temperament: string;
+    id: number;
+    image: {
+      url: string;
+      id: string;
+    };
+  };
+}
+
 export default function BreedsList() {
   const [breeds, setBreeds] = useState();
 
@@ -17,7 +29,7 @@ export default function BreedsList() {
     loadData();
   }, []);
 
-  const renderItem = ({item}) => <BreedItem item={item} />;
+  const renderItem = ({item}: IProps) => <BreedItem item={item} />;
 
   return (
     <SafeAreaView style={styles.container}>
