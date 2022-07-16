@@ -52,6 +52,7 @@ export default function BreedDetail({route}: IProps) {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
+      <View style={styles.paddings}>
       <TouchableOpacity
         style={styles.backArrow}
         onPress={() => navigation.goBack()}>
@@ -77,15 +78,19 @@ export default function BreedDetail({route}: IProps) {
         <Button title="Другое фото" pressFunction={loadImage} />
         <Button title="Добавить в избранное" pressFunction={saveToFavourite} />
       </View>
+      </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  paddings: {
     paddingLeft: 25,
     paddingRight: 32,
     paddingTop: 142.34,
+  },
+  container: {
+    
     backgroundColor: colors.SCREEN_BACKGROUND,
   },
   backArrow: {

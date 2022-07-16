@@ -36,7 +36,7 @@ export default function BreedsList() {
       <FlatList
         data={breeds}
         renderItem={renderItem}
-        keyExtractor={item => item.id}
+        
       />
     </SafeAreaView>
   );
